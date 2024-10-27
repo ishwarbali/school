@@ -21,7 +21,10 @@
 </head>
 <body>
     <h1>Project List</h1>
-    <img src="{% static 'images/schoollogo.jpg' %}" alt="Project Image" class="corner-image"> <!-- Positioned image -->
+    <div class="image-container">
+        <img src="{% static 'images/schoollogo.jpg' %}" alt="School Logo" class="corner-image">
+        <img src="{% static 'images/little.jpeg' %}" alt="Project Image" class="image01">
+    </div>
     
     <!-- Search Input -->
     <input type="text" id="searchInput" placeholder="Search by project name" onkeyup="filterProjects()">
@@ -31,14 +34,14 @@
     <select id="projectSelect" onchange="location = this.value;">
         <option value="">-- Select a project --</option>
         {% for project in projects %}
-            <option value="{% url 'projects_detail' project %}">{{ project }}</option>
+            <option value="{% url 'projects_detail' project.name %}">{{ project.name }}</option>
         {% endfor %}
     </select>
 
     <ul id="projectList">
         {% for project in projects %}
             <li> 
-                <a href="{% url 'projects_detail' project %}">{{ project }}</a>
+                <a href="{% url 'projects_detail' project.name %}">{{ project.name }}</a>
             </li>
         {% endfor %} 
     </ul>

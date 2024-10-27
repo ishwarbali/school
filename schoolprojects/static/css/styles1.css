@@ -1,52 +1,50 @@
 /* styles1.css */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+body, html {
     margin: 0;
     padding: 0;
+    height: 100%; /* Full height */
+    overflow: hidden; /* Prevent scrolling */
 }
 
+.full-image {
+    position: relative; /* Change to relative for proper positioning */
+    width: 20%; /* Adjust width as needed */
+    max-width: 500px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 30%; /* Limit height to 60% of the viewport */
+    object-fit: cover; /* Maintain aspect ratio while covering */
+    z-index: -1; /* Send the image to the back */
+}
 
-
+.text-overlay {
+    position: relative; /* Positioning for text overlay */
+    color: white; /* Text color for visibility */
+    text-align: center;
+    z-index: 1; /* Bring text above the image */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional semi-transparent background for text */
+    border-radius: 8px; /* Optional rounded corners */
+}
 
 h1 {
     font-size: 2.5em;
     margin: 10px 0;
-    color: #333;
 }
 
 h2 {
     font-size: 1.5em;
     margin: 10px 0;
-    color: #555;
 }
 
-/* Link styling */
 a {
     display: inline-block;
     margin-top: 15px;
-    color: #007BFF;
+    color: hsl(242, 87%, 47%);
     text-decoration: none;
     font-weight: bold;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-/* Image styling */
-.img {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    height: 50vh; /* Set the height to 50% of the viewport height */
-    overflow: hidden; /* Hide any overflow */
-}
-
-.corner-image {
-    width: 100%; /* Set width to 100% of the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }

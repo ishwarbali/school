@@ -76,44 +76,23 @@ a:hover {
 
 /* Image container for positioning the image */
 .image-container {
-    position: fixed; /* Fixed positioning for the container */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Offset to truly center it */
-    z-index: 100; /* Ensure it is on top */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
+    gap: 10px; /* Space between the images */
+    padding: 20px; /* Optional padding around the container */
 }
 
-.corner-image {
-    width: 120px; /* Normal width */
+.corner-image,
+.image01 {
+    width: 100px; /* Set a fixed width for both images */
     height: auto; /* Maintain aspect ratio */
-    border: 2px solid #4a90e2; /* Border color */
-    border-radius: 5px; /* Rounded corners */
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transition for highlight effect */
+    border-radius: 5px; /* Optional rounded corners */
+    border: 2px solid #4a90e2; /* Optional border color */
+    transition: transform 0.3s; /* Smooth transformation on hover */
 }
 
-/* Highlight effect on hover */
-.corner-image:hover {
-    border-color: #ffcc00; /* Change border color on hover */
-    box-shadow: 0 0 10px rgba(255, 204, 0, 0.8); /* Add shadow effect */
-}
-/* Tooltip styling */
-.tooltip {
-    visibility: hidden; /* Hidden by default */
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    color: #fff; /* Text color */
-    text-align: center; /* Centered text */
-    border-radius: 5px; /* Rounded corners */
-    padding: 5px; /* Padding */
-    position: absolute; /* Positioned relative to the image */
-    bottom: 100%; /* Position above the image */
-    right: 50%; /* Center the tooltip */
-    transform: translateX(50%); /* Adjust to center it */
-    transition: visibility 0.2s, opacity 0.2s; /* Fade-in effect */
-    opacity: 0; /* Hidden by default */
-}
-
-/* Show tooltip on hover */
-.corner-image:hover + .tooltip {
-    visibility: visible; /* Make it visible */
-    opacity: 1; /* Fade in */
+.corner-image:hover,
+.image01:hover {
+    transform: scale(1.05); /* Scale up on hover */
 }
