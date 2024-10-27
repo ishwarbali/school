@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles1.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project }}</title>
+</head>
+<body>
+   
+   
+       
+                <h1>{{ project }}</h1>
+                <h2>Room Number: {{ roomname }}</h2>
+                <a href="{% url 'projects_list' %}">Back to Projects</a>
+        
+        <div class="img">
+            <img src="{% static 'images/schoolimg.jpg' %}" alt="Project Image" class="corner-image">
+        </div>
+    
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script>
+        function filterProjects() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const projectList = document.getElementById('projectList');
+            const projects = projectList.getElementsByTagName('li');
+
+            for (let i = 0; i < projects.length; i++) {
+                const projectName = projects[i].textContent.toLowerCase();
+                projects[i].style.display = projectName.includes(searchInput) ? '' : 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Project List</h1>
+    <img src="{% static 'images/schoollogo.jpg' %}" alt="Project Image" class="corner-image"> <!-- Positioned image -->
+    
+    <!-- Search Input -->
+    <input type="text" id="searchInput" placeholder="Search by project name" onkeyup="filterProjects()">
+
+    <!-- Dropdown Menu -->
+    <label for="projectSelect">Select a project:</label>
+    <select id="projectSelect" onchange="location = this.value;">
+        <option value="">-- Select a project --</option>
+        {% for project in projects %}
+            <option value="{% url 'projects_detail' project %}">{{ project }}</option>
+        {% endfor %}
+    </select>
+
+    <ul id="projectList">
+        {% for project in projects %}
+            <li> 
+                <a href="{% url 'projects_detail' project %}">{{ project }}</a>
+            </li>
+        {% endfor %} 
+    </ul>
+</body>
+</html>
