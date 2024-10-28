@@ -74,6 +74,7 @@ a:hover {
     color: #ffcc00; /* Change link color on hover */
 }
 
+
 /* Image container for positioning the image */
 .image-container {
     display: flex; /* Use flexbox for layout */

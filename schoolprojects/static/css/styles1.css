@@ -1,30 +1,28 @@
-/* styles1.css */
-
 body, html {
     margin: 0;
     padding: 0;
     height: 100%; /* Full height */
-    overflow: hidden; /* Prevent scrolling */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    background-color: #f0f8ff; /* Light background for the page */
 }
 
 .full-image {
-    position: relative; /* Change to relative for proper positioning */
-    width: 20%; /* Adjust width as needed */
-    max-width: 500px; /* Set a maximum width */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 30%; /* Limit height to 60% of the viewport */
-    object-fit: cover; /* Maintain aspect ratio while covering */
-    z-index: -1; /* Send the image to the back */
+    width: 100vw; /* Full viewport width */
+    max-width: 100%; /* Fit within the viewport */
+    max-height: 80vh; /* Limit the height to 80% of the viewport */
+    object-fit: contain; /* Maintain aspect ratio without cropping */
 }
 
 .text-overlay {
-    position: relative; /* Positioning for text overlay */
-    color: white; /* Text color for visibility */
+    width: 100vw; /* Full viewport width */
+    color: #333; /* Darker color for readability */
     text-align: center;
-    z-index: 1; /* Bring text above the image */
+    background-color: #add8e6; /* Light blue background color */
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Optional semi-transparent background for text */
-    border-radius: 8px; /* Optional rounded corners */
+    border-radius: 0 0 8px 8px; /* Optional rounded corners for the bottom */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for separation */
 }
 
 h1 {
