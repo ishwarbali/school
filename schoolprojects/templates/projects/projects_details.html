@@ -11,7 +11,7 @@
     <img src="{% static 'images/'|add:project.image %}" alt="Project Image" class="full-image">
     <div class="text-overlay">
         <h1>{{ project.name}}</h1>
-        <h2>BLOCK NAME: {{ project.block }}</h2>
+        <h2>Room Number: {{ project.roomNum }}</h2>
         <a href="{% url 'projects_list' %}">Back to Projects</a>
     </div>   
 </body>
